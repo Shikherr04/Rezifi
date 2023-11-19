@@ -1,80 +1,321 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>Rezifi</title>
+    <link rel="icon" href="images/letter-r.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
-    <title>Login page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
-
 <body>
 
-    <div class="container" id="container">
-        <div class="form-container sign-up">
-            <form>
-                <h1>Create Account</h1>
-                <div class="social-icons">
-                    <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
-                    <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
-                    <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
-                </div>
-                <span>or use your email for registeration</span>
-                <input type="text" placeholder="Name">
-                <input type="email" placeholder="Email">
-                <input type="password" placeholder="Password">
-                <button>SIGN UP</button>
-            </form>
-        </div>
-        <div class="form-container sign-in">
-            <form>
-                <h1>Sign In</h1>
-                <div class="social-icons">
-                    <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
-                    <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
-                    <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
-                </div>
-                <span>or use your email password</span>
-                <input type="email" placeholder="Email">
-                <input type="password" placeholder="Password">
-                <a href="#">Forget Your Password?</a>
-                <button>SIGN IN</button>
-            </form>
-        </div>
-
-
-        <div class="toggle-container">
-            <div class="toggle">
-                <div class="toggle-panel toggle-left">
-                    <h1>Welcome Back!</h1>
-                    <p>Enter your personal details to use all of site features</p>
-                    <button class="hidden" id="login">SIGN IN</button>
-                </div>
-                <div class="toggle-panel toggle-right">
-                    <h1>Hello, Friend!</h1>
-                    <p>Register with your personal details to use all of site features</p>
-                    <button class="hidden" id="register">SIGN UP</button>
-                </div>
+  <!-- navbar -->
+    <header >
+        <nav>
+          <div class="nav-left">
+            <div class="logo-name">
+              <a href="index.html">Rezifi</a>
             </div>
+            <div class="dropdown">
+              <span>Select Location :</span>
+                  <select name="City" id="city">
+                    <option value="Meerut">Meerut</option>
+                  </select>
+            </div>
+          </div>
+          <div class="navbar">
+            <a href="#dishes">Gallery</a>
+            <a href="#restaurants">Restaurants</a>
+            <a href="dineout.html">Dine Out</a>
+            <a href="#footer">About</a>
+            <a href="login.html" id="login-status">Login</a>
+          </div>
+        </nav>
+    </header>
+
+    <!-- slideshow -->
+    <section>
+      <div class="container slideshow">
+          <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="images/slide1.jpg" class="d-block w-100 slide-img" alt="slide 1">
+                </div>
+                <div class="carousel-item">
+                  <img src="images/slide2.jpg" class="d-block w-100 slide-img" alt="slide 2">
+                </div>
+                <div class="carousel-item">
+                  <img src="images/slide3.jpg" class="d-block w-100 slide-img" alt="slide 3">
+                </div>
+                <div class="carousel-item">
+                  <img src="images/slide4.jpg" class="d-block w-100 slide-img" alt="slide 4">
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+      </div> 
+    </section>
+
+    <!-- dishes -->
+    <div class="dishes" id="dishes">
+
+      <h2>Popular Dishes</h2>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <img src="images/pizza.jpg" alt="pizza">
+            <h5>Pizza</h5>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <img src="images/burger.jpg" alt="burger">
+            <h5>Burger</h5>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <img src="images/chicken.jpeg" alt="chicken">
+            <h5>Chicken</h5>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <img src="images/cholebhature.jpeg" alt="cholebhature">
+            <h5>Chole Bhature</h5>
+          </div>
         </div>
+  
+        <div class="row">
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <img src="images/noodles.jpeg" alt="noodles">
+            <h5>Noodles</h5>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <img src="images/panner.jpg" alt="paneer">
+            <h5>Paneer</h5>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <img src="images/pasta.jpg" alt="pasta">
+            <h5>Pasta</h5>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <img src="images/thali.jpg" alt="thali">
+            <h5>Thali</h5>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <img src="images/rajkachori.jpeg" alt="kachori">
+            <h5>Raj kachori</h5>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <img src="images/pavbhaji.jpeg" alt="pav bhaji">
+            <h5>Pav Bhaji</h5>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <img src="images/dosa.jpg" alt="dosa">
+            <h5>Dosa</h5>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <img src="images/tikka.jpg" alt="tikka">
+            <h5>Tikka</h5>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <script type="text/Javascript">
-        const container = document.getElementById('container');
-        const registerBtn = document.getElementById('register');
-        const loginBtn = document.getElementById('login');
+    <!-- cards -->
+    <div class="restaurants" id="restaurants">
+      <h2>Restaurants</h2>
 
-        registerBtn.addEventListener('click', () => {
-            container.classList.add("active");
-        });
+      <div class="row">
+        <div class="col-lg-4 col-md-1 col-sm-1 ">
+          <div class="card">
+            <div class="bg-photo haldirams">
+              <img src="images/haldiram.jpeg" alt="" height="240px" width="400px" >
+              <i class="fa fa-heart" id="heart1"></i>
+            </div>
+              <div class="res-name">
+                <span class="name">
+                  Haldirams
+                </span>
+                <span class="rating">4.2</span>
+              </div>
+              <p>North Indian , South Indian<br>
+              ₹150 for one<br>
+              <i class="fa-regular fa-clock"></i> 15 minutes<br>
+              <i class="fa-solid fa-location-dot"></i> Abulane, Meerut</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-1 col-sm-1 ">
+          <div class="card">
+            <div class="bg-photo mcd">
+              <img src="images/mcd.jpeg" alt="" height="240px" width="400px">
+              <i class="fa fa-heart" id="heart2"></i>
+            </div>
+            <div class="res-name">
+              <span class="name">
+                Mc Donalds
+              </span>
+              <span class="rating">
+                4.3
+              </span>
+            </div>
+              <p>Burger<br>
+              ₹120 for one<br>
+              <i class="fa-regular fa-clock"></i> 20 minutes<br> 
+              <i class="fa-solid fa-location-dot"></i> Mars Resort, Meerut</p>          
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-1 col-sm-1 ">
+          <div class="card">
+            <div class="bg-photo Bikanervala">
+              <img src="images/bikanervala.jpeg" alt="" height="240px" width="400px">
+              <i class="fa fa-heart" id="heart3"></i></div>
+              <div class="res-name">
+                <span class="name">
+                  Bikanervala
+                </span>
+                <span class="rating">
+                  4.2
+                </span>
+              </div>
+              <p>North Indian , South Indian<br >
+              ₹200 for two<br>
+              <i class="fa-regular fa-clock"></i> 30 minutes<br>
+              <i class="fa-solid fa-location-dot"></i> Modipuram, Meerut</p>
+          </div>
+        </div>
+      </div>
 
-        loginBtn.addEventListener('click', () => {
-            container.classList.remove("active");
-        });
+
+      <div class="row">
+        <div class="col-lg-4 col-md-1 col-sm-1">
+          <div class="card">
+            <div class="bg-photo meeras">
+              <img src="images/meeras.png" alt="" height="240px" width="400px">
+              <i class="fa fa-heart" id="heart4"></i></div>
+              <div class="res-name">
+                <span class="name">
+                  Meeras Bistro
+                </span>
+                <span class="rating">
+                  4.5
+                </span>
+              </div>
+              <p>Italian , Continental<br>
+              ₹200 for one<br>
+              <i class="fa-regular fa-clock"></i> 25 minutes<br>
+              <i class="fa-solid fa-location-dot"></i> Kankerkhera, Meerut</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-1 col-sm-1">
+          <div class="card">
+            <div class="bg-photo starbucks">
+              <img src="images/starbucks.jpeg" alt="" height="240px" width="400px" style="object-fit: cover">
+              <i class="fa fa-heart" id="heart5"></i></div>
+              <div class="res-name">
+                <span class="name">
+                  Starbucks
+                </span>
+                <span class="rating">
+                  4.1
+                </span>
+              </div>
+              <p>Coffee<br>
+                ₹200 for one<br>
+                <i class="fa-regular fa-clock"></i> 15 minutes<br>
+                <i class="fa-solid fa-location-dot"></i> Saket, Meerut
+              </p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-1 col-sm-1">
+          <div class="card">
+            <div class="bg-photo king">
+              <img src="images/burgerking.jpeg" alt="" height="240px" width="400px">
+              <i class="fa fa-heart" id="heart6"></i></div>
+              <div class="res-name">
+                <span class="name">
+                  Burger King
+                </span>
+                <span class="rating">4.0
+                </span>
+              </div>
+              <p>Burger<br>
+                ₹100 for one<br>
+                <i class="fa-regular fa-clock"></i> 20 minutes<br>
+                <i class="fa-solid fa-location-dot"></i> Abulane, Meerut
+              </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- footer -->
+    <section class="footer" id="footer">
+
+      <div class="icons-container">
+   
+         <div class="icons">
+            <i class="fas fa-clock"></i>
+               <h3>opening hour</h3>
+               <p>07:00am to 10:00pm</p>
+         </div>
+   
+         <div class="icons">
+            <i class="fas fa-phone"></i>
+               <h3>phone</h3>
+               <p>+91 8290245523</p>
+               <p>+91 9257595839</p>
+         </div>
+   
+         <div class="icons">
+            <i class="fas fa-envelope"></i>
+               <h3>email</h3>
+               <p>shikher.2003@gmail.com</p>
+               <p>rezifi.corporate@gmail.com</p>
+         </div>
+   
+         <div class="icons">
+            <i class="fas fa-map"></i>
+               <h3>address</h3>
+               <p>Meerut, Uttar Pradesh</p>
+         </div>
+   
+      </div>
+   
+      <div class="share">
+         <a href="https://www.facebook.com/" target="_blank" class="fab fa-facebook-f"></a>
+         <a href="https://twitter.com/login?lang=en" target="_blank" class="fab fa-twitter"></a>
+         <a href="https://www.instagram.com/" target="_blank" class="fab fa-instagram"></a>
+         <a href="https://www.linkedin.com/" target="_blank" class="fab fa-linkedin"></a>
+      </div>
+   
+      <div class="credit">created by <span>Shikhar Pratap Singh</span> | all rights reserved.</div>
+   
+   </section>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
     </script>
-</body>
+    <script>
+      $(document).ready(function() {
+        const storedUsername = localStorage.getItem('username');
+        if (storedUsername) {
+          $('#login-status').text(storedUsername);
+        }
 
+      });
+        
+    
+    </script>
+
+</body>
 </html>

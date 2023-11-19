@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rezifi Login</title>
+    <link rel="icon" href="images/letter-r.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <!-- navbar -->
+    <header >
+        <nav>
+          <div class="nav-left">
+            <div class="logo-name">
+              <a href="index.html">Rezifi</a>
+            </div>
+            <div class="dropdown">
+              <span>Select Location :</span>
+                  <select name="City" id="city">
+                    <option value="Meerut">Meerut</option>
+                  </select>
+            </div>
+          </div>
+          <div class="navbar">
+            <a href="#dishes">Gallery</a>
+            <a href="#restaurants">Restaurants</a>
+            <a href="dineout.html">Dine Out</a>
+            <a href="#footer">About</a>
+            <a href="login.html">Login</a>
+          </div>
+        </nav>
+    </header>
+    
+    <div class="form-container">
+        <div class="login">
+            <form action="">
+                <h1>LOGIN</h1><br><br>
+                <label for="username">Number
+                </label><br>
+                <input type="text" placeholder="Enter your Username" id="username" required><br><br>
+                <span id="errornumber" class="error"></span>
+                <label for="password">Password
+                </label><br>
+                <input type="password" placeholder="Enter you Password" id="pass" required><br>
+                <span id="errorpass" class="pass"></span><br>
+                <label for="password">Re-Enter Your Password
+                </label><br>
+                <input type="password" placeholder="Enter you Password" id="pass" required><br>
+                <span id="errorpass1" class="error"></span><br><br>
+                <input type="button" value="Login" id="loginButton"> <br> <br> 
+                <a href="signup.html" target="_self">Not a Member?</a>
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $('#loginButton').on('click', function() {
+          var username = $('#username').val();
+          localStorage.setItem('username', username);
+          window.location.href = 'index.html';
+        });
+      });
+    </script>
+    
+</body>
+</html>

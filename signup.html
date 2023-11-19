@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rezifi Sign Up</title>
+    <link rel="icon" href="images/letter-r.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- navbar -->
+    <header >
+        <nav>
+          <div class="nav-left">
+            <div class="logo-name">
+              <a href="index.html">Rezifi</a>
+            </div>
+            <div class="dropdown">
+              <span>Select Location :</span>
+                  <select name="City" id="city">
+                    <option value="Meerut">Meerut</option>
+                  </select>
+            </div>
+          </div>
+          <div class="navbar">
+            <a href="#dishes">Gallery</a>
+            <a href="#restaurants">Restaurants</a>
+            <a href="dineout.html">Dine Out</a>
+            <a href="#footer">About</a>
+            <a href="login.html">Login</a>
+          </div>
+        </nav>
+    </header>
+    <div class="form-container">
+        <div class="signup">
+            <form action="" id="signupForm">
+                <h1>SIGN UP</h1><br>
+                <div class="name-div">
+                    <div class="first">
+                        <label for="firstname">First Name</label><br>
+                        <input type="text" placeholder="First Name" required>
+                    </div>
+                    <div class="last">
+                        <label for="lastname">Last Name</label><br>
+                        <input type="text" placeholder="Last Name" required>
+                    </div>
+                </div><br>
+                <label for="email">Email Address</label><br>
+                <input type="email" placeholder="Enter your Email" id="email" required><br><br>
+                <label for="password">Enter your Passowrd</label><br>
+                <input type="password" placeholder="Enter your password" id="password" required><br><br>
+                <label for="dob">Enter your Date of Birth</label><br>
+                <input type="date" name="dob" id="dob" required><br><br>
+                <label for="gender">Gender&nbsp;
+                <input type="radio" name="gender" class="btn">Male&nbsp;
+                <input type="radio" name="gender" class="btn">Female
+                </label><br><br>
+                <input type="checkbox" name="terms" checked class="btn" required><label>I agree to the terms and conditions</label><br><br>
+                <input type="submit" value="Sign Up">
+            </form>
+        </div>
+    </div>
+    <script>
+      document.getElementById('signupForm').addEventListener('submit', function(event) {
+          // Prevent the default form submission
+          event.preventDefault();
+  
+          // Redirect to login.html
+          window.location.href = 'login.html';
+      });
+  </script>
+</body>
+</html>

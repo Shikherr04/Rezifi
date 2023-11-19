@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dine Out</title>
+    <link rel="icon" href="images/letter-r.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <!-- navbar -->
+    <header >
+        <nav>
+          <div class="nav-left">
+            <div class="logo-name">
+              <a href="index.html">Rezifi</a>
+            </div>
+            <div class="dropdown">
+              <span>Select Location :</span>
+                  <select name="City" id="city">
+                    <option value="Meerut">Meerut</option>
+                  </select>
+            </div>
+          </div>
+          <div class="navbar">
+            <a href="#dishes">Gallery</a>
+            <a href="#restaurants">Restaurants</a>
+            <a href="dineout.html">Dine Out</a>
+            <a href="#footer">About</a>
+            <a href="login.html" id="login-status">Login</a>
+          </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div id="cardResultContainer"></div>
+        
+        <h1>Book you Table</h1>
+    
+        <hr class="divider">
+
+        <div class="formdiv">
+            <form id="cardForm">
+                <label for="name">Name</label><br>
+                <input type="text" id="name" placeholder="Enter your Name" name="name" required><br><br>
+          
+                <label for="res-booking">Restuarant Name</label><br>
+                <select name="dropdown1" id="dropdown1" required>
+                  <option value="">Select</option>
+                  <option value="Haldirams">Haldirams</option>
+                  <option value="Bikanervala">Bikanervala</option>
+                  <option value="Mc Donalds">Mc Donalds</option>
+                  <option value="Starbucks">Starbucks</option>
+                  <option value="Burger king">Burger King</option>
+                  <option value="Meeras Bistro">Meeras Bistro</option>
+                </select><br><br>
+                <label for="perosn">Number of Person</label>
+                <input type="number" min="1" max="5" placeholder="Number of person" name="person" id="persons" required><br><br>
+                <label for="date">Date and Time</label><br>
+                <input type="datetime-local" id="date" name="time" required><br><br>
+          
+                <button type="button" onclick="generateCard()" class="btn1">Book Table</button>
+              </form>
+        </div>
+        
+      </div>
+        <script type="text/Javascript">
+            function generateCard() {
+                // Get form values
+                const name = document.getElementById('name').value;
+                const resname = document.getElementById('dropdown1').value;
+                const persons = document.getElementById('persons').value;
+                const date = document.getElementById('date').value;
+            
+                // Create a card element
+                const cardElement = document.createElement('div');
+                cardElement.classList.add('card1');
+                cardElement.innerHTML = `
+                <h2>Name: ${name}</h2>
+                <p>Restaurant Name: ${resname}</p>
+                <p>Number of person: ${persons}</p>
+                <p>Date and Time: ${date}</p>
+                `;
+            
+                // Display the card on the page before the form
+                const cardResultContainer = document.getElementById('cardResultContainer');
+                cardResultContainer.insertBefore(cardElement, cardResultContainer.firstChild);
+            
+                // Clear the form fields
+                document.getElementById('cardForm').reset();
+            }
+        </script>
+</body>
+</html>
